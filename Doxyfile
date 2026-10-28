@@ -1,0 +1,16 @@
+PROJECT_NAME           = "vclient"
+PROJECT_BRIEF          = "Клиентская программа для обмена данными с сервером"
+OUTPUT_DIRECTORY       = docs
+OUTPUT_LANGUAGE        = Russian
+
+INPUT                  = include src
+RECURSIVE              = YES
+FILE_PATTERNS          = *.h *.hpp *.cpp
+
+GENERATE_HTML          = YES
+HTML_OUTPUT            = html
+GENERATE_LATEX         = NO
+
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
+WARN_IF_UNDOCUMENTED   = YES

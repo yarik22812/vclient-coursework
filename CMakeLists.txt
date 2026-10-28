@@ -32,3 +32,17 @@ target_compile_options(vclient PRIVATE
     -Wextra
     -Wpedantic
 )
+
+add_executable(test_authentication
+    tests/test_authentication.cpp
+    src/authentication.cpp
+)
+
+target_include_directories(test_authentication PRIVATE
+    include
+    ${CRYPTOPP_INCLUDE_DIR}
+)
+
+target_link_libraries(test_authentication PRIVATE
+    ${CRYPTOPP_LIBRARY}
+)

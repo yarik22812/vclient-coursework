@@ -46,3 +46,23 @@ target_include_directories(test_authentication PRIVATE
 target_link_libraries(test_authentication PRIVATE
     ${CRYPTOPP_LIBRARY}
 )
+
+enable_testing()
+
+add_executable(test_client_options
+    tests/test_client_options.cpp
+    src/client_options.cpp
+)
+
+target_include_directories(test_client_options PRIVATE include)
+
+add_test(NAME client_options COMMAND test_client_options)
+
+add_executable(test_data_io
+    tests/test_data_io.cpp
+    src/data_io.cpp
+)
+
+target_include_directories(test_data_io PRIVATE include)
+
+add_test(NAME data_io COMMAND test_data_io)

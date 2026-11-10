@@ -86,16 +86,25 @@ void test_write_results()
     write_results(output_path, expected);
 
     std::ifstream file(output_path);
+    assert(file.is_open());
+
+    std::string line;
+    assert(std::getline(file, line));
+
+    std::istringstream input(line);
     std::size_t count = 0;
-    file >> count;
+    assert(static_cast<bool>(input >> count));
     assert(count == expected.size());
 
     for (double value : expected) {
         double actual = 0.0;
-        file >> actual;
-        assert(file.good() || file.eof());
+        assert(static_cast<bool>(input >> actual));
         assert(std::abs(actual - value) < 1e-12);
     }
+
+    std::string extra;
+    assert(!(input >> extra));       // лишних значений в строке нет
+    assert(!std::getline(file, extra)); // второй строки нет
 }
 
 } // namespace

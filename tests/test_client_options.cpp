@@ -50,7 +50,7 @@ int main()
     bool missing_address_threw = false;
     try {
         parse({"vclient", "-i", "input.bin", "-o", "result.txt"});
-    } catch (const std::runtime_error&) {
+    } catch (const std::invalid_argument&) {
         missing_address_threw = true;
     }
     assert(missing_address_threw);

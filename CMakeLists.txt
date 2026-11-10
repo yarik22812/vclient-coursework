@@ -48,6 +48,7 @@ target_link_libraries(test_authentication PRIVATE
 )
 
 enable_testing()
+add_test(NAME authentication COMMAND test_authentication)
 
 add_executable(test_client_options
     tests/test_client_options.cpp

@@ -48,6 +48,7 @@ target_link_libraries(test_authentication PRIVATE
 )
 
 enable_testing()
+
 add_test(NAME authentication COMMAND test_authentication)
 
 add_executable(test_client_options
@@ -67,3 +68,12 @@ add_executable(test_data_io
 target_include_directories(test_data_io PRIVATE include)
 
 add_test(NAME data_io COMMAND test_data_io)
+
+add_executable(test_credentials
+    tests/test_credentials.cpp
+    src/credentials.cpp
+)
+
+target_include_directories(test_credentials PRIVATE include)
+
+add_test(NAME credentials COMMAND test_credentials)

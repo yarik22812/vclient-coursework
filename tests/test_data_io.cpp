@@ -7,6 +7,8 @@
 #include <stdexcept>
 #include <string>
 #include <vector>
+#include <cstdio>
+#include <sstream>
 
 namespace {
 

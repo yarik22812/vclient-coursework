@@ -63,7 +63,7 @@ int main()
             "-i", "input.bin",
             "-o", "result.txt"
         });
-    } catch (const std::runtime_error&) {
+    } catch (const std::invalid_argument&) { 
         invalid_port_threw = true;
     }
     assert(invalid_port_threw);
